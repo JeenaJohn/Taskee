@@ -2,7 +2,7 @@
   background-color: #e6e1e1;
   padding: 8rem 4rem;
 
- /* height: 100vh; */
+  /* height: 100vh; */
 }
 
 .section-list-data {
@@ -23,9 +23,23 @@
 }
 
 .flex-container {
-    display: flex;
-   
-  }
+  display: flex;
+}
+
+.box-task {
+  margin: 5rem 3rem;
+  border: 1px solid #fff;
+  background-color: #e6e1e1;
+  border-radius: 1rem;
+}
+
+.task-headings {
+  background-color: #00a6a4;
+  background-clip: padding-box;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  font-style: oblique;
+}
 
 /*
 // .notes {
