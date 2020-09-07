@@ -1,0 +1,90 @@
+.u-center-text {
+  text-align: center !important;
+}
+.u-text-left {
+  text-align: left;
+  padding-left: 3rem;
+}
+
+.u-margin-left {
+  margin-left: 2rem;
+}
+
+.u-margin-right {
+  margin-right: 2rem;
+}
+
+.u-padding-right {
+  padding-right: 2rem;
+}
+
+.u-margin-bottom-very-small {
+  margin-bottom: 1rem !important;
+}
+
+.u-margin-bottom-small {
+  margin-bottom: 2rem !important;
+}
+.u-margin-bottom-medium {
+  margin-bottom: 4rem !important;
+}
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem !important;
+}
+
+.u-margin-top-very-small {
+  margin-top: 1rem !important;
+}
+
+.u-margin-top-small {
+  margin-top: 2rem !important;
+}
+.u-margin-top-medium {
+  margin-top: 4rem !important;
+}
+.u-margin-top-big {
+  margin-top: 8rem !important;
+}
+.u-margin-top-huge {
+  margin-top: 10rem !important;
+}
+
+.u-padding-top-big {
+  padding-top: 8rem !important;
+}
+
+.u-display-mode {
+  border: 0;
+  background-color: transparent;
+}
+
+.u-text-underline {
+  text-decoration: underline;
+}
+
+
+
+.u-capitalize {
+  text-transform: capitalize;
+}
+
+.u-text-color-red{
+  color: red !important;
+}
+
+.u-bg-color-red{
+  background-color: red !important;
+}
+
+.u-bg-color-black {
+  background-image: linear-gradient(to right, #666, #333);
+}
+
+.u-bg-color-blue {
+  background-image: linear-gradient(to right, #446694, #2c5080);
+}
+
+.u-display-none {
+  display: none;
+}
