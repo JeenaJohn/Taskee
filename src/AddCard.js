@@ -10,7 +10,7 @@ function AddCard(props) {
     const { name, value } = e.target;
 
     switch (name) {
-      case "task":
+      case "taskName":
         setNewTaskName(value);
         break;
       case "dueDate":
@@ -30,7 +30,7 @@ function AddCard(props) {
             <input
               className="card-doc-text u-width-80"
               type="text"
-              name="task"
+              name="taskName"
               placeholder="Task name"
               maxLength="40"
               value={newTaskName}
