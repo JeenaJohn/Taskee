@@ -41,6 +41,14 @@ h4 {
   font-size: 1.6rem;
 }
 
+label{
+  font-style: oblique;
+}
+
+*:focus {
+  outline: none;
+}
+
 /*
 // .list {
 //   font-size: 1.9rem;

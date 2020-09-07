@@ -3,7 +3,6 @@
 }
 .u-text-left {
   text-align: left;
-  padding-left: 3rem;
 }
 
 .u-margin-left {
@@ -67,6 +66,10 @@
 
 .u-capitalize {
   text-transform: capitalize;
+}
+
+.u-width-80 {
+  width: 80%;
 }
 
 .u-text-color-red{
