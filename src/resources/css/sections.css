@@ -1,29 +1,28 @@
+.section-about {
+  background-color: #e6e1e1;
+  padding: 6rem 4rem;
+
+  height: 100vh;
+}
+
+.section-list-data {
+  background-color: #f7f7f7;
+  /*  background-color:#e6e1e1; */
+  padding: 6rem 0;
+}
+
+.app-features {
+  background-color: #25adad;
+  color: #fff;
+  padding: 1rem 0.5rem;
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 0.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 0.4rem 0.4rem;
+}
+
 /*
-// .section-list-data {
-//   background-color: #f7f7f7;
-
-// }
-
-// .section-home {
-//   background-color: #f7f7f7;
-//   padding: 8rem 4rem;
-//   height: 100%;
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // .notes {
 //   padding: 0.5rem;
 //   overflow-y: scroll;
@@ -47,4 +46,3 @@
 
 
 */
-
