@@ -3,6 +3,25 @@ import AddCard from "./AddCard";
 import Buckets from "./Buckets";
 
 function MyTasks(props) {
+  const [userMsg, setUserMsg] = useState("");
+
+  const validateData = (taskName, dueDate) => {
+    let error = " ";
+    if (taskName.length === 0) {
+      error = "Task name is missing";
+    }
+    setUserMsg(error);
+  };
+
+  const saveNewDocData = (e, taskName, dueDate, notes) => {
+    e.preventDefault();
+    validateData(taskName, dueDate);
+    if (userMsg.length === 0) {
+      /* no errors */
+      itemsRef.push({ taskName, dueDate, notes });
+    }
+  };
+
   return (
     <div>
       <section id="section-list-data" className="section-list-data">
@@ -18,12 +37,12 @@ function MyTasks(props) {
         <div className="box-task">
           <h3
             className="heading-tertiary task-headings
-         u-text-left u-margin-bottom-small"
+         u-text-left u-padding-left u-margin-bottom-small"
           >
             Add new Task
           </h3>
 
-          <AddCard />
+          <AddCard save={saveNewTask} />
         </div>
       </section>
     </div>

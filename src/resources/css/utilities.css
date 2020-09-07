@@ -17,6 +17,10 @@
   padding-right: 2rem;
 }
 
+.u-padding-left {
+  padding-left: 2rem;
+}
+
 .u-margin-bottom-very-small {
   margin-bottom: 1rem !important;
 }
