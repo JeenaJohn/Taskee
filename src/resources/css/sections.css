@@ -1,14 +1,14 @@
 .section-about {
   background-color: #e6e1e1;
-  padding: 6rem 4rem;
+  padding: 8rem 4rem;
 
-  height: 100vh;
+ /* height: 100vh; */
 }
 
 .section-list-data {
   background-color: #f7f7f7;
   /*  background-color:#e6e1e1; */
-  padding: 6rem 0;
+  padding: 8rem 0;
 }
 
 .app-features {
@@ -21,6 +21,11 @@
   border-radius: 1rem;
   box-shadow: 0 0.4rem 0.4rem;
 }
+
+.flex-container {
+    display: flex;
+   
+  }
 
 /*
 // .notes {
