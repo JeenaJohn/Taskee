@@ -1,60 +1,49 @@
-// .heading-primary {
-//   color: #fff;
-  
-//   margin-bottom: 6rem;
-//   //text-align: center;
-//   width: 100%;
-//   color: #2C5080;
-  
-// }
+.heading-primary {
+  margin-bottom: 3rem;
+}
 
-// .heading-primary--main {
-//   display: inline-block;
-//   font-size: 4rem;
-//   font-weight: 700;
-//   letter-spacing: 0.4rem;
-//   text-transform: capitalize;
-// }
+.heading-primary--main {
+  display: block;
+  font-size: 5rem;
+  font-weight: 700;
+  letter-spacing: 1rem;
+  text-transform: uppercase;
+}
 
-// .heading-primary--sub {
-//   display: block;
-//   font-size: 2rem;
-//   font-weight: 400;
-//   letter-spacing: 0.4rem;
-// }
+.heading-primary--sub {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+}
 
-// .heading-secondary {
-//   font-size: 2.6rem;
+.heading-secondary {
+  font-size: 2.8rem;
 
-//   font-weight: 700;
-//   display: inline-block;
-//   letter-spacing: 0.1rem;
-  
+  font-weight: 400;
+  display: inline-block;
+  letter-spacing: 0.2rem;
+  background-clip: text;
  
-// }
+}
 
-// .heading-tertiary {
-//   font-size: 2.2rem;
-//   font-weight: 700;
-// }
+.heading-tertiary {
+  font-size: 2rem;
+  font-weight: 400;
+}
 
-// .heading-report-item {
-//   font-size: 2.2rem;
-//   font-weight: 700;
-// }
+h4 {
+  font-size: 1.9rem;
+  font-weight: 400;
+  margin: 1rem 1rem;
+}
 
-// h4 {
-//   font-size: 1.9rem;
-//   font-weight: 400;
-//   margin: 1rem 1rem;
-// }
+.paragraph {
+  font-size: 1.9rem;
+}
 
-
-// .paragraph {
-//   font-size: 1.9rem;
-// }
-
-// .list{
+/*
+// .list {
 //   font-size: 1.9rem;
 // }
 
@@ -63,13 +52,12 @@
 //   font-size: 1.9rem;
 // }
 
-// input, textarea{
+// input,
+// textarea {
 //   font-size: 1.9rem;
-
 // }
 
-
-// .italics-text{
+// .italics-text {
 //   font-size: 1.7rem;
 //   font-weight: 400;
 // }
@@ -77,3 +65,4 @@
 // *:focus {
 //   outline: none;
 // }
+*/

@@ -1,6 +1,7 @@
+/*
 // .section-list-data {
 //   background-color: #f7f7f7;
-//   /*  background-color:#e6e1e1; */
+
 // }
 
 // .section-home {
@@ -9,78 +10,19 @@
 //   height: 100%;
 // }
 
-// .home-page-img {
-//   width: 100%;
-//   height: 30rem;
-// }
 
-// .box-app-details {
-//   width: 92%;
-//   margin-left: 4%;
-//   margin-top: 5rem;
-//   margin-bottom: 5rem;
-//   padding: 5rem;
-//   border: 1px solid #fff;
-//   background-color: #e6e1e1; 
 
-//   border-radius: 1rem;
-// }
 
-// .section-choose-kid {
-//   background-color: #e6e1e1;
-//   padding: 6rem 0;
-// }
 
-// /*List kid profiles for user */
-// .list-kids {
-//   width: 100%;
-//   display: block;
-//   font-size: 1.8rem;
-//   margin-left: 2rem;
-// }
 
-// .radio-btn {
-//   padding-right: 1rem;
-// }
 
-// /*Add new kid's profile */
 
-// .add-kid {
-//   margin-top: 0.5rem;
-//   padding: 5rem 3rem;
-//   font-size: 1.5rem;
-//   color: #5e5e5e;
-// }
 
-// .kid-name-label {
-//   margin: 0.5rem;
-//   padding: 0.5rem;
-// }
 
-// .kid-name-input {
-//   margin: 0 0.5rem;
-//   font-size: 1.5rem;
-//   padding: 0.5rem;
-// }
 
-// .box-questions {
-//   width: 60%;
-//   margin-left: 20%;
-//   margin-bottom: 5rem;
-//   padding: 2rem;
-//   border: 1px solid #fff;
-//   background-color: #e6e1e1;
-//   border-radius: 1rem;
-// }
 
-// .question {
-//   font-size: 1.5rem;
-//   margin: 1rem 3rem;
-// }
 
-// .itch-level {
-//   margin-left: 0.6rem;
-// }
+
 
 // .notes {
 //   padding: 0.5rem;
@@ -103,51 +45,6 @@
 //   box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
 // }
 
-// .table {
-//   border-spacing: 0 1.3rem; /*horizontal spacing*/
-// }
 
-// .td-label {
-//   margin-left: 3rem;
-// }
+*/
 
-// .td-input-col {
-//   width: 100%;
-// }
-// .td-input {
-//   width: 90%;
-// }
-
-// /*Display report*/
-// .box-report {
-//   width: 60%;
-//   margin-left: 20%;
-//   margin-bottom: 5rem;
-//   padding: 2rem;
-//   border: 1px solid #fff;
-//   background-color: #e6e1e1;
-//   border-radius: 1rem;
-// }
-// .report-item {
-//   font-size: 1.9rem;
-//   margin: 0.5rem 3rem;
-// }
-
-
-// .report-item-text{
-//  margin-left: 1rem;
-// }
-
-// .report-date {
-//   color: #f3fafe;
-// }
-
-// .box-existing-symptoms {
-//   width: 90%;
-//   margin: 3rem 3rem;
-
-//   padding: 1rem;
-//   border: 1px solid #fff;
-//   background-color: #f7f7f7;
-//   border-radius: 1rem;
-// }

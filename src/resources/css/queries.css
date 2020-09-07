@@ -1,77 +1,64 @@
-// /*
-// 0 - 600px:      Phone
-// 600 - 900px:    Tablet portrait
-// 900 - 1200px:   Tablet landscape
-// [1200 - 1800] is where our normal styles apply
-// 1800px + :      Big desktop
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
 
-// $breakpoint arguement choices:
-// - phone
-// - tab-port
-// - tab-land
-// - big-desktop */
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop */
 
-// /*1800px+  big desktops  //1rem = 16px*/
-// @media only screen and (min-width: 1800px) {
-//   html {
-//     font-size: 16px;
-//   }
-// }
+/*1800px+  big desktops  //1rem = 16px*/
+@media only screen and (min-width: 1800px) {
+  html {
+    font-size: 16px;
+  }
+}
 
-// /*1200px Tablet landscape //1 rem = 12px */
-// @media only screen and (max-width: 1200px) {
-//   html {
-//     font-size: 12px;
-//   }
-//   .row {
-//     padding: 0 2%;
-//   }
-//   .box-questions {
-//     width: 80%;
-//     margin-left: 10%;
-//   }
-//   .box-report {
-//     width: 80%;
-//     margin-left: 10%;
-//   }
+/*1200px Tablet landscape //1 rem = 12px */
+@media only screen and (max-width: 1200px) {
+  html {
+    font-size: 12px;
+  }
+  .row {
+    padding: 0 2%;
+  }
+  .box-questions {
+    width: 80%;
+    margin-left: 10%;
+  }
+  .box-report {
+    width: 80%;
+    margin-left: 10%;
+  }
 
 
-// }
+}
 
-// /*900px Tablet portrait //1 rem = 10px */
-// @media only screen and (max-width: 900px) {
-//   html {
-//     font-size: 10px;
-//   }
+/*900px Tablet portrait //1 rem = 10px */
+@media only screen and (max-width: 900px) {
+  html {
+    font-size: 10px;
+  }
 
-//   .header__text-box {
-//     width: 35%;
-//     margin-left: 32.5%;
-//   }
+}
 
-//   .header-main-button{
-//     margin-bottom: 2rem;
-//     margin-right: 0rem;
-//   }
-  
-//   .sidebar-logo { 
-//     height: 8rem;
-//   }
-// }
-
-// /*600px Phone //1 rem = 9px*/
-// @media only screen and (max-width: 600px) {
-//   html {
-//     font-size: 9px;
-//   }
+/*600px Phone //1 rem = 9px*/
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 9px;
+  }
  
-// }
+}
 
-// @media only screen and (max-width: 480px) {
-//   html {
-//     font-size: 8px;
-//   }
-// }
+@media only screen and (max-width: 480px) {
+  html {
+    font-size: 8px;
+  }
+} 
 
 
 
