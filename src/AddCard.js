@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import firebase from "./firebase.js";
+import { toast } from "react-toastify";
 import add_task from "./resources/images/add-task.svg";
 
 function AddCard(props) {
@@ -45,6 +46,7 @@ function AddCard(props) {
 
     /* no errors */
     databaseRef.push({ taskName, dueDate, notes });
+    toast.success("Task added successfully");
 
     /* clear the input fields */
     setNewTaskName("");

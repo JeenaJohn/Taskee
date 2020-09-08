@@ -4,6 +4,9 @@ import firebase, { auth, provider } from "./firebase.js";
 import About from "./About";
 import MyTasks from "./MyTasks";
 
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
 import "./App.css";
 
 import logo from "./resources/images/calendar-logo.svg";
@@ -38,6 +41,7 @@ function App() {
 
   return (
     <div>
+      <ToastContainer />
       <header>
         <nav className="nav-bar">
           <div className="row">
@@ -77,8 +81,8 @@ function App() {
       {/* Display details about the app */}
       <About />
 
-       {/* Display My Tasks - Add Card, Buckets for 3 months, 6 months and 6+ months */}
-       <MyTasks userID={userID} />
+      {/* Display My Tasks - Add Card, Buckets for 3 months, 6 months and 6+ months */}
+      <MyTasks userID={userID} />
 
       <footer>
         <div className="row u-center-text">

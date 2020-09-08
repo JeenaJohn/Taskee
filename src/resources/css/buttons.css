@@ -34,8 +34,8 @@ background-color: #FF9331;
 .btn-medium-ghost {
   background-color: transparent;
  
-  padding: 0.6rem 0.6rem;
-  border-radius: 1rem;
+  padding: 0.4rem 0.5rem;
+  border-radius: 0.8rem;
   font-size: 1.1rem;
   border: 2px solid #FF9331;
 
