@@ -3,9 +3,11 @@ import firebase from "./firebase.js";
 import AddCard from "./AddCard";
 import Card from "./Card";
 
+import { toast } from "react-toastify";
+
 function MyTasks(props) {
   const [tasks, setTasks] = useState([]);
-  
+
   //const [count_3months, setCount_3months] = useState(0);
   //const [count_6months, setCount_6months] = useState(0);
   //const [count_After_6months, setCount_After6months] = useState(0);
@@ -65,6 +67,7 @@ function MyTasks(props) {
     var updates = {};
     updates["/" + firebaseId] = {};
     databaseRef.update(updates);
+    toast.success("Task deleted. Note: Your list is now up to date");
   };
 
   const editTask = (e, firebaseId, index, taskName, dueDate, notes) => {
@@ -79,6 +82,10 @@ function MyTasks(props) {
     var updates = {};
     updates["/" + firebaseId] = editedData;
     databaseRef.update(updates);
+
+    toast.success(
+      "Task updated sucessfully. Note: Task may move to another bucket if the due date was changed."
+    );
   };
 
   compute_future_dates();
