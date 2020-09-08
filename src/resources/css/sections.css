@@ -76,6 +76,7 @@
   font-size: 1.5rem;
   border-radius: 30px;
   box-shadow: 0 0.4rem 0.4rem;
+  transition: all 1s ease-out;
 }
 
 .card-details {
@@ -94,8 +95,6 @@
 .card-doc-text {
   padding: 0.5rem;
 }
-
-
 
 .card-date-input {
   padding: 0.5rem;
@@ -136,8 +135,61 @@
   border: 0;
 }
 
-.delete-fade-in {
+.show-card{
+    opacity: 1;
+}
 
+.fadeOut-card{
+    opacity: 0
+}
+.deleted-fade-in {
+  animation: fadeOut ease 1.3s;
+  -webkit-animation: fadeOut ease 1s;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes fadeOut {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeOut {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeOut {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /*

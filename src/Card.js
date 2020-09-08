@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 
-
 function Card(props) {
   const [editMode, setEditMode] = useState(false);
+  const [deletedFlag, setDeletedFlag] = useState(false);
 
   const [taskName, setTaskName] = useState(props.taskName);
   const [dueDate, SetDueDate] = useState(props.dueDate);
@@ -10,6 +10,7 @@ function Card(props) {
 
   useEffect(() => {
     setEditMode(false);
+    setDeletedFlag(false);
     setTaskName(props.taskName);
     SetDueDate(props.dueDate);
     setNotes(props.notes);
@@ -34,6 +35,7 @@ function Card(props) {
   };
 
   const discardChanges = () => {
+    setDeletedFlag(false);
     setEditMode(false);
     setNotes(props.notes);
     setTaskName(props.taskName);
@@ -41,7 +43,7 @@ function Card(props) {
   };
 
   return (
-    <div className="card">
+    <div className={`card  ${deletedFlag ? "fadeOut-card" : "show-card"} `}>
       <div className={` ${editMode ? "u-display-none " : "icon-edit"}`}>
         <button
           className="btn-icon"
@@ -114,14 +116,7 @@ function Card(props) {
           className="btn btn-medium"
           type="submit"
           onClick={(e) =>
-            props.editTask(
-              e,
-              props.id,
-              props.index,
-              taskName,
-              dueDate,
-              notes
-            )
+            props.editTask(e, props.id, props.index, taskName, dueDate, notes)
           }
         >
           Save
@@ -133,7 +128,10 @@ function Card(props) {
           className="btn-icon"
           title="Delete Task"
           type="submit"
-          onClick={(e) => props.deleteTask(e, props.id, props.index)}
+          onClick={(e) => {
+            setDeletedFlag(true);
+            setTimeout(()=>props.deleteTask(e, props.id, props.index),2000);
+          }}
         >
           <ion-icon name="trash-outline"></ion-icon>
         </button>
