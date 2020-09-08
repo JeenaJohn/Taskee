@@ -56,8 +56,15 @@ background-color: #FF9331;
   box-shadow: 2px 2px #888888; 
   transition: all 0.2s;
 }
+
 .btn-icon:hover {
   transform: scaleX(1.4) scaleY(1.2);
+}
+
+.btn-disabled{
+  background-color: grey !important;
+  cursor: none !important;
+  
 }
 
 .icon-edit {

@@ -11,6 +11,8 @@ function AddCard(props) {
 
   const [userMsg, setUserMsg] = useState("");
 
+  let saveBtnDisabled = props.userID == null ? true : false;
+
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -94,7 +96,12 @@ function AddCard(props) {
           </div>
 
           <div className="u-center-text u-margin-top-small">
-            <button className="btn btn-medium " type="submit">
+            <button  className={`btn btn-medium ${
+                saveBtnDisabled ? "btn-disabled" : ""
+              } `}
+              type="submit"
+              disabled={saveBtnDisabled}
+            >
               Save
             </button>
           </div>
