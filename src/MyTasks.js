@@ -5,7 +5,7 @@ import Card from "./Card";
 
 function MyTasks(props) {
   const [tasks, setTasks] = useState([]);
-  const [userMsg, setUserMsg] = useState("");
+  
   //const [count_3months, setCount_3months] = useState(0);
   //const [count_6months, setCount_6months] = useState(0);
   //const [count_After_6months, setCount_After6months] = useState(0);
@@ -22,8 +22,6 @@ function MyTasks(props) {
 
     databaseRef.on("value", (snapshot) => {
       let items = snapshot.val();
-
-      console.log(items);
       let newState = [];
       for (let item in items) {
         newState.push({
@@ -33,8 +31,6 @@ function MyTasks(props) {
           notes: items[item].notes,
         });
       }
-
-      console.log(newState);
 
       setTasks(newState);
     });
@@ -61,26 +57,6 @@ function MyTasks(props) {
     d_6months.setMonth(d.getMonth() + 6);
     d_3months_ISO = d_3months.toISOString().split("T")[0];
     d_6months_ISO = d_6months.toISOString().split("T")[0];
-  };
-
-  const validateData = (taskName, dueDate) => {
-    let error = " ";
-    if (taskName.length === 0) {
-      error = "Task name is missing";
-    }
-    setUserMsg(error);
-  };
-
-  const saveNewTask = (e, taskName, dueDate, notes) => {
-    e.preventDefault();
-    console.log(props.userID);
-    console.log(props);
-
-    validateData(taskName, dueDate);
-    if (userMsg.length === 0) {
-      /* no errors */
-      databaseRef.push({ taskName, dueDate, notes });
-    }
   };
 
   const deleteTask = (e, firebaseId, index) => {
@@ -129,7 +105,7 @@ function MyTasks(props) {
             Add new Task
           </h3>
 
-          <AddCard save={saveNewTask} />
+          <AddCard userID={props.userID} />
         </div>
 
         {/* Coming up in 3 months */}
