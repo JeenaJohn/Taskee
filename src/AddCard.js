@@ -39,7 +39,7 @@ function AddCard(props) {
             />
 
             <div>
-              <label for="dueDate">
+              <label htmlFor="dueDate">
                 Due on
               </label>
               <input
@@ -53,7 +53,7 @@ function AddCard(props) {
             </div>
 
             <div>
-              <label for="notes">
+              <label htmlFor="notes">
                 Notes
               </label>
               <textarea

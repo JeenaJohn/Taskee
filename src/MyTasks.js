@@ -6,20 +6,24 @@ import Card from "./Card";
 function MyTasks(props) {
   const [tasks, setTasks] = useState([]);
   const [userMsg, setUserMsg] = useState("");
-  const [count_3months, setCount_3months] = useState(0);
-  const [count_6months, setCount_6months] = useState(0);
-  const [count_After_6months, setCount_After6months] = useState(0);
+  //const [count_3months, setCount_3months] = useState(0);
+  //const [count_6months, setCount_6months] = useState(0);
+  //const [count_After_6months, setCount_After6months] = useState(0);
 
   const databaseRef = firebase.database().ref("tasks/" + props.userID);
 
   let d_3months_ISO, d_6months_ISO;
+  let count_3months, count_6months, count_After_6months;
 
   useEffect(() => {
-    // console.log(itemsRef);
+    console.log(databaseRef);
+
+    console.log(props);
 
     databaseRef.on("value", (snapshot) => {
       let items = snapshot.val();
 
+      console.log(items);
       let newState = [];
       for (let item in items) {
         newState.push({
@@ -30,27 +34,22 @@ function MyTasks(props) {
         });
       }
 
+      console.log(newState);
+
       setTasks(newState);
     });
-
-    compute_future_dates();
-    filter_tasks_to_get_count();
-  }, []);
+  }, [props]);
 
   const filter_tasks_to_get_count = () => {
-    setCount_3months(
-      tasks.filter((task) => task.dueDate <= d_3months_ISO).length
-    );
+    count_3months = tasks.filter((task) => task.dueDate <= d_3months_ISO)
+      .length;
 
-    setCount_6months(
-      tasks.filter(
-        (task) => d_3months_ISO < task.dueDate && task.dueDate <= d_6months_ISO
-      ).length
-    );
+    count_6months = tasks.filter(
+      (task) => d_3months_ISO < task.dueDate && task.dueDate <= d_6months_ISO
+    ).length;
 
-    setCount_After6months(
-      tasks.filter((task) => task.dueDate > d_6months_ISO).length
-    );
+    count_After_6months = tasks.filter((task) => task.dueDate > d_6months_ISO)
+      .length;
   };
 
   const compute_future_dates = () => {
@@ -74,6 +73,9 @@ function MyTasks(props) {
 
   const saveNewTask = (e, taskName, dueDate, notes) => {
     e.preventDefault();
+    console.log(props.userID);
+    console.log(props);
+
     validateData(taskName, dueDate);
     if (userMsg.length === 0) {
       /* no errors */
@@ -103,6 +105,9 @@ function MyTasks(props) {
     databaseRef.update(updates);
   };
 
+  compute_future_dates();
+  filter_tasks_to_get_count();
+
   return (
     <div>
       <section id="section-list-data" className="section-list-data">
@@ -110,7 +115,7 @@ function MyTasks(props) {
           <h2 className="heading-secondary bg-color-blue">My Tasks</h2>
         </div>
         {props.userID === null ? (
-          <p className="paragraph u-text-left u-text-color-red">
+          <p className="paragraph u-text-left u-padding-left u-text-color-red">
             You have to login to use this app.
           </p>
         ) : null}

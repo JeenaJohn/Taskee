@@ -78,7 +78,7 @@ function App() {
       <About />
 
        {/* Display My Tasks - Add Card, Buckets for 3 months, 6 months and 6+ months */}
-       <MyTasks userID = {userID}/>
+       <MyTasks userID={userID} />
 
       <footer>
         <div className="row u-center-text">

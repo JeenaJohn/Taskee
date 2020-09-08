@@ -14,11 +14,11 @@
 }
 
 .u-padding-right {
-  padding-right: 2rem;
+  padding-right: 3rem;
 }
 
 .u-padding-left {
-  padding-left: 2rem;
+  padding-left: 3rem;
 }
 
 .u-margin-bottom-very-small {
@@ -77,7 +77,13 @@
 }
 
 .u-text-color-red{
-  color: red !important;
+  color: red;
+  font-weight: 700;
+
+}
+
+.u-draw-line {
+  border-bottom: 1px solid #5e5e5e;
 }
 
 .u-bg-color-red{

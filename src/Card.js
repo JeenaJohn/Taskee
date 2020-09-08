@@ -64,7 +64,7 @@ function Card(props) {
         </button>
       </div>
 
-      <div className="card-details">
+      <div className="card-details ">
         <input
           className={`card-doc-text ${
             editMode ? "edit-mode" : "display-mode"
@@ -76,7 +76,7 @@ function Card(props) {
           readOnly={!editMode}
         />
 
-        <div className={` ${editMode ? "display-mode" : "card-date"} `}>
+        <div className={` ${editMode ? " " : "u-draw-line"} `}>
           <label for="dueDate" className="card-date-label">
             Due on{" "}
           </label>
