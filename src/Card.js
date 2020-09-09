@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 
+
 function Card(props) {
   const [editMode, setEditMode] = useState(false);
   const [deletedFlag, setDeletedFlag] = useState(false);
@@ -43,100 +44,104 @@ function Card(props) {
   };
 
   return (
-    <div className={`card  ${deletedFlag ? "fadeOut-card" : "show-card"} `}>
-      <div className={` ${editMode ? "u-display-none " : "icon-edit"}`}>
-        <button
-          className="btn-icon"
-          title="Edit Task"
-          type="submit"
-          onClick={() => setEditMode(true)}
-        >
-          <ion-icon name="create-outline"></ion-icon>
-        </button>
-      </div>
+  
+      <div className="card">
+        <div className={` ${editMode ? "u-display-none " : "icon-edit"}`}>
+          <button
+            className="btn-icon"
+            title="Edit Task"
+            type="submit"
+            onClick={() => setEditMode(true)}
+          >
+            <ion-icon name="create-outline"></ion-icon>
+          </button>
+        </div>
 
-      {/* close button during edit mode */}
-      <div className={` ${editMode ? "icon-close " : "u-display-none"}`}>
-        <button
-          className="btn-icon"
-          title="Discard changes"
-          type="submit"
-          onClick={() => discardChanges()}
-        >
-          <ion-icon name="close-circle-outline"></ion-icon>
-        </button>
-      </div>
+        {/* close button during edit mode */}
+        <div className={` ${editMode ? "icon-close " : "u-display-none"}`}>
+          <button
+            className="btn-icon"
+            title="Discard changes"
+            type="submit"
+            onClick={() => discardChanges()}
+          >
+            <ion-icon name="close-circle-outline"></ion-icon>
+          </button>
+        </div>
 
-      <div className="card-details ">
-        <input
-          className={`card-doc-text ${
-            editMode ? "edit-mode" : "display-mode"
-          } `}
-          type="text"
-          name="taskName"
-          value={taskName}
-          onChange={(e) => handleChange(e)}
-          readOnly={!editMode}
-        />
-
-        <div className={` ${editMode ? " " : "u-draw-line"} `}>
-          <label for="dueDate" className="card-date-label">
-            Due on{" "}
-          </label>
+        <div className="card-details ">
           <input
-            type="date"
-            name="dueDate"
-            className={`card-date-input ${
+            className={`card-doc-text ${
               editMode ? "edit-mode" : "display-mode"
             } `}
-            value={dueDate}
+            type="text"
+            name="taskName"
+            value={taskName}
             onChange={(e) => handleChange(e)}
             readOnly={!editMode}
           />
+
+          <div className={` ${editMode ? " " : "u-draw-line"} `}>
+            <label for="dueDate" className="card-date-label">
+              Due on{" "}
+            </label>
+            <input
+              type="date"
+              name="dueDate"
+              className={`card-date-input ${
+                editMode ? "edit-mode" : "display-mode"
+              } `}
+              value={dueDate}
+              onChange={(e) => handleChange(e)}
+              readOnly={!editMode}
+            />
+          </div>
+
+          <div className="card-notes">
+            <label for="notes" className="card-notes-label">
+              Notes{" "}
+            </label>
+            <textarea
+              name="notes"
+              className={`card-notes ${
+                editMode ? "edit-mode" : "display-mode"
+              } `}
+              rows="4"
+              maxLength="150"
+              value={notes}
+              onChange={(e) => handleChange(e)}
+              readOnly={!editMode}
+            />
+          </div>
         </div>
 
-        <div className="card-notes">
-          <label for="notes" className="card-notes-label">
-            Notes{" "}
-          </label>
-          <textarea
-            name="notes"
-            className={`card-notes ${editMode ? "edit-mode" : "display-mode"} `}
-            rows="4"
-            maxLength="150"
-            value={notes}
-            onChange={(e) => handleChange(e)}
-            readOnly={!editMode}
-          />
+        <div className={`u-center-text ${editMode ? " " : "u-display-none"}`}>
+          <button
+            className="btn btn-medium"
+            type="submit"
+            onClick={(e) =>
+              props.editTask(e, props.id, props.index, taskName, dueDate, notes)
+            }
+          >
+            Save
+          </button>
+        </div>
+
+        <div className={` ${editMode ? "u-display-none " : "icon-delete"}`}>
+          <button
+            className="btn-icon"
+            title="Delete Task"
+            type="submit"
+            onClick={(e) => {
+              setDeletedFlag(true);
+             props.deleteTask(e, props.id, props.index);
+            }}
+          >
+            <ion-icon name="trash-outline"></ion-icon>
+          </button>
         </div>
       </div>
 
-      <div className={`u-center-text ${editMode ? " " : "u-display-none"}`}>
-        <button
-          className="btn btn-medium"
-          type="submit"
-          onClick={(e) =>
-            props.editTask(e, props.id, props.index, taskName, dueDate, notes)
-          }
-        >
-          Save
-        </button>
-      </div>
-
-      <div className={` ${editMode ? "u-display-none " : "icon-delete"}`}>
-        <button
-          className="btn-icon"
-          title="Delete Task"
-          type="submit"
-          onClick={(e) => {
-            setDeletedFlag(true);
-            setTimeout(()=>props.deleteTask(e, props.id, props.index),2000);
-          }}
-        >
-          <ion-icon name="trash-outline"></ion-icon>
-        </button>
-      </div>
-    </div>
   );
 }
 

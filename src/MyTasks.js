@@ -5,6 +5,7 @@ import Card from "./Card";
 
 import { toast } from "react-toastify";
 
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 function MyTasks(props) {
   const [tasks, setTasks] = useState([]);
 
@@ -123,26 +124,25 @@ function MyTasks(props) {
           >
             Coming up in 3 months ({count_3months} tasks)
           </h3>
-          <div className="container-cards">
-            {count_3months > 0 ? (
-              tasks
-                .filter((task) => task.dueDate <= d_3months_ISO)
-                .map((task, index) => (
-                  <Card
-                    id={task.id}
-                    taskName={task.taskName}
-                    dueDate={task.dueDate}
-                    notes={task.notes}
-                    index={index}
-                    key={index}
-                    editTask={editTask}
-                    deleteTask={deleteTask}
-                  />
-                ))
-            ) : (
-              <h4 className="h4">No tasks are due</h4>
-            )}
-          </div>
+          <TransitionGroup className="container-cards">
+            {tasks.map((task, index) => (  
+                
+                  <CSSTransition key={task.id} timeout={500} classNames="move">         
+                    <Card
+                      id={task.id}
+                      taskName={task.taskName}
+                      dueDate={task.dueDate}
+                      notes={task.notes}
+                      index={index}
+                      key={index}
+                      editTask={editTask}
+                      deleteTask={deleteTask}
+                    />
+                    </CSSTransition>
+                
+                 
+                ))}
+          </TransitionGroup>
         </div>
 
         {/* Coming up in 6 months */}

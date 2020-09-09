@@ -8,6 +8,7 @@
   font-weight: 700;
   letter-spacing: 1rem;
   text-transform: uppercase;
+  font: 5rem "handwriting", cursive;
 }
 
 .heading-primary--sub {
@@ -15,6 +16,7 @@
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: 0.2rem;
+  font: 2rem "handwriting", cursive;
 }
 
 .heading-secondary {
@@ -46,6 +48,7 @@ label{
 }
 
 input, textarea{
+  font    : 1.4em/1.5em "handwriting", cursive;
   font-size: 1.6rem;
 
 }

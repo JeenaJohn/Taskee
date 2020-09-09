@@ -38,7 +38,8 @@
   background-clip: padding-box;
   padding: 0.5rem 1rem;
   color: #fff;
-  font-style: oblique;
+
+  font    : 2rem "handwriting", cursive;
 }
 
 .container-cards {
@@ -76,7 +77,7 @@
   font-size: 1.5rem;
   border-radius: 30px;
   box-shadow: 0 0.4rem 0.4rem;
-  transition: all 1s ease-out;
+ /* transition: all 1s ease-out; */
 }
 
 .card-details {
@@ -135,62 +136,83 @@
   border: 0;
 }
 
-.show-card{
-    opacity: 1;
-}
-
-.fadeOut-card{
-    opacity: 0
-}
-.deleted-fade-in {
-  animation: fadeOut ease 1.3s;
-  -webkit-animation: fadeOut ease 1s;
-}
-
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
+/* animations */
+.move-enter {
     opacity: 0;
-  }
+  
 }
 
-@-moz-keyframes fadeOut {
-  0% {
-    opacity: 0;
-  }
-  100% {
+.move-enter-active {
     opacity: 1;
-  }
+    transition: all 500ms ease-in;
 }
 
-@-webkit-keyframes fadeOut {
-  0% {
-    opacity: 0;
-  }
-  100% {
+.move-exit {
     opacity: 1;
-  }
+    
 }
 
-@-o-keyframes fadeOut {
-  0% {
+.move-exit-active {
     opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+    transition: all 500ms ease-in;
 }
 
-@-ms-keyframes fadeOut {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+/* .show-card{
+//     opacity: 1;
+// }
+
+// .fadeOut-card{
+//     opacity: 0
+// }
+// .deleted-fade-in {
+//   animation: fadeOut ease 1.3s;
+//   -webkit-animation: fadeOut ease 1s;
+// }
+
+// @keyframes fadeOut {
+//   0% {
+//     opacity: 1;
+//   }
+//   100% {
+//     opacity: 0;
+//   }
+// }
+
+// @-moz-keyframes fadeOut {
+//   0% {
+//     opacity: 0;
+//   }
+//   100% {
+//     opacity: 1;
+//   }
+// }
+
+// @-webkit-keyframes fadeOut {
+//   0% {
+//     opacity: 0;
+//   }
+//   100% {
+//     opacity: 1;
+//   }
+// }
+
+// @-o-keyframes fadeOut {
+//   0% {
+//     opacity: 0;
+//   }
+//   100% {
+//     opacity: 1;
+//   }
+// }
+
+// @-ms-keyframes fadeOut {
+//   0% {
+//     opacity: 0;
+//   }
+//   100% {
+//     opacity: 1;
+//   }
+// } */
 
 /*
 // .notes {
