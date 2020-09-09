@@ -52,12 +52,14 @@ input, textarea{
   font-size: 1.6rem;
   border: 1px solid #fff;
   border-radius: 0.6rem;
+  
 
 }
 
 ::placeholder {
  
   font: 1.6rem "handwriting", cursive;
+  
 }
 
 *:focus {
