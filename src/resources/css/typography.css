@@ -16,7 +16,7 @@
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: 0.2rem;
-  font: 2rem "handwriting", cursive;
+  
 }
 
 .heading-secondary {
@@ -48,13 +48,16 @@ label{
 }
 
 input, textarea{
-  font    : 1.4em/1.5em "handwriting", cursive;
+
   font-size: 1.6rem;
+  border: 1px solid #fff;
+  border-radius: 0.6rem;
 
 }
 
 ::placeholder {
-  font-style: italic;
+ 
+  font: 1.6rem "handwriting", cursive;
 }
 
 *:focus {
