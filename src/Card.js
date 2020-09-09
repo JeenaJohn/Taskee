@@ -97,7 +97,7 @@ function Card(props) {
             />
           </div>
 
-          <div className="card-notes">
+          <div>
             <label for="notes" className="card-notes-label">
               Notes{" "}
             </label>
