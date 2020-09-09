@@ -57,8 +57,7 @@ input, textarea{
 }
 
 ::placeholder {
- 
-  font: 1.6rem "handwriting", cursive;
+  font-style: italic;
   
 }
 
