@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import firebase, { auth, provider } from "./firebase.js";
+import { auth, provider } from "./firebase.js";
 
 import About from "./About";
 import MyTasks from "./MyTasks";

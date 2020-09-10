@@ -82,7 +82,7 @@ function Card(props) {
           />
 
           <div className={` ${editMode ? " " : "u-draw-line"} `}>
-            <label for="dueDate" className="card-date-label">
+            <label htmlFor="dueDate" className="card-date-label">
               Due on{" "}
             </label>
             <input
@@ -98,7 +98,7 @@ function Card(props) {
           </div>
 
           <div>
-            <label for="notes" className="card-notes-label">
+            <label htmlFor="notes" className="card-notes-label">
               Notes{" "}
             </label>
             <textarea

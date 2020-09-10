@@ -137,6 +137,10 @@
   border: 0;
 }
 
+.card-saved{
+  background-color: #e6e1e1;
+}
+
 
 /* .show-card{
 //     opacity: 1;

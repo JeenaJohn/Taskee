@@ -10,7 +10,8 @@ function AddCard(props) {
   const [newDueDate, setNewDueDate] = useState("");
   const [newNotes, setNewNotes] = useState("");
 
-  const [userMsg, setUserMsg] = useState("");
+  //const [userMsg, setUserMsg] = useState("");
+  const [cardAddedFlag, setCardAddedFlag] = useState(false);
 
   let saveBtnDisabled = props.userID == null ? true : false;
 
@@ -39,19 +40,29 @@ function AddCard(props) {
     setUserMsg(error);
   }; */
 
+  /* save task or after save, button text is changed to Add another task
+   When button is clicked, check if cardAddedFlag is set. If so, make the form
+   ready for next input*/
   const saveNewTask = (e, taskName, dueDate, notes) => {
     e.preventDefault();
+    if (cardAddedFlag === true) {
 
-    //validateData(taskName, dueDate);
+       /* clear the input fields */
+      setNewTaskName("");
+      setNewDueDate("");
+      setNewNotes("");
+    /* set card added flag */
+      setCardAddedFlag(false);
 
-    /* no errors */
-    databaseRef.push({ taskName, dueDate, notes });
-    toast.success("Task added successfully");
+    } else {
 
-    /* clear the input fields */
-    setNewTaskName("");
-    setNewDueDate("");
-    setNewNotes("");
+      /* no errors */
+      databaseRef.push({ taskName, dueDate, notes });
+      toast.success("Task added successfully");
+
+       /* set card added flag */
+       setCardAddedFlag(true);
+    }
   };
 
   return (
@@ -62,7 +73,9 @@ function AddCard(props) {
           onSubmit={(e) => saveNewTask(e, newTaskName, newDueDate, newNotes)}
         >
           <input
-            className="card-doc-text u-width-80"
+            className={`card-doc-text u-width-80 ${
+              cardAddedFlag ? "card-saved" : ""
+            } `}
             type="text"
             name="taskName"
             placeholder="Task name"
@@ -77,7 +90,9 @@ function AddCard(props) {
             <input
               type="date"
               name="dueDate"
-              className="card-date-input"
+              className={`card-date-input ${
+                cardAddedFlag ? "card-saved" : ""
+              } `}
               value={newDueDate}
               onChange={(e) => handleChange(e)}
               required
@@ -88,7 +103,7 @@ function AddCard(props) {
             <label htmlFor="notes">Notes</label>
             <textarea
               name="notes"
-              className="card-notes"
+              className={`card-notes ${cardAddedFlag ? "card-saved" : ""} `}
               rows="4"
               maxLength="150"
               placeholder="Add more details..."
@@ -98,13 +113,14 @@ function AddCard(props) {
           </div>
 
           <div className="u-center-text u-margin-top-small">
-            <button  className={`btn btn-medium ${
+            <button
+              className={`btn btn-medium ${
                 saveBtnDisabled ? "btn-disabled" : ""
               } `}
               type="submit"
               disabled={saveBtnDisabled}
             >
-              Save
+              {cardAddedFlag ? "Add another Task" : "Save Task"}
             </button>
           </div>
         </form>
