@@ -125,23 +125,25 @@ function MyTasks(props) {
             Coming up in 3 months ({count_3months} tasks)
           </h3>
           <TransitionGroup className="container-cards">
-            {tasks.map((task, index) => (  
-                
-                  <CSSTransition key={task.id} timeout={500} classNames="move">         
-                    <Card
-                      id={task.id}
-                      taskName={task.taskName}
-                      dueDate={task.dueDate}
-                      notes={task.notes}
-                      index={index}
-                      key={index}
-                      editTask={editTask}
-                      deleteTask={deleteTask}
-                    />
-                    </CSSTransition>
-                
-                 
-                ))}
+             {count_3months > 0 ? (tasks
+              .filter((task) => task.dueDate <= d_3months_ISO)
+              .map((task, index) => (
+                <CSSTransition key={task.id} timeout={500} classNames="move">
+                  <Card
+                    id={task.id}
+                    taskName={task.taskName}
+                    dueDate={task.dueDate}
+                    notes={task.notes}
+                    index={index}
+                    key={index}
+                    editTask={editTask}
+                    deleteTask={deleteTask}
+                  />
+                </CSSTransition>
+              ))): (
+                <h4 className="h4">No tasks are due</h4>
+              )}
+            
           </TransitionGroup>
         </div>
 
