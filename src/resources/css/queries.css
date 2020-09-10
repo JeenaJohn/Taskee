@@ -26,13 +26,9 @@ $breakpoint arguement choices:
   .row {
     padding: 0 2%;
   }
-  .box-questions {
-    width: 80%;
-    margin-left: 10%;
-  }
-  .box-report {
-    width: 80%;
-    margin-left: 10%;
+ 
+  .app-features{
+   margin: 0.5rem; 
   }
 
 
