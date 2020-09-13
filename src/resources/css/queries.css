@@ -39,6 +39,10 @@ $breakpoint arguement choices:
   html {
     font-size: 10px;
   }
+  .new-card-img {
+    height: 15rem;
+    text-align:right;
+  }
 
 }
 
