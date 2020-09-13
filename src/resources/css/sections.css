@@ -43,6 +43,14 @@
   font-weight: 700; */
 }
 
+.text-for-no-tasks{
+  padding: 2rem 2rem;
+ 
+  text-align: left;
+  font-weight: 700;
+  
+}
+
 .container-cards {
   display: flex;
   flex-flow: row;
