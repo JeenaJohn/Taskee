@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { auth, provider } from "./firebase.js";
 
+import Home from "./Home";
 import About from "./About";
 import MyTasks from "./MyTasks";
 
@@ -64,19 +65,11 @@ function App() {
             </div>
           </div>
         </nav>
-        <div className="header__text-box">
-          <h1 className="heading-primary">
-            <span className="heading-primary--main">Taskee</span>
-            <span className="heading-primary--sub">
-              Reminder for your personal tasks
-            </span>
-          </h1>
-
-          <a href="#section-list-data" className="btn btn-header">
-            Show my Tasks
-          </a>
-        </div>
+   
       </header>
+
+      {/* Title, tagline and img for app */}
+      <Home/>
 
       {/* Display details about the app */}
       <About />

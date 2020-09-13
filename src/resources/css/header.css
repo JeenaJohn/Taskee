@@ -1,16 +1,16 @@
 
-header {
-  height: 100vh;
-  width: 100%;
-  background-image: 
-    url(../images/calendar_img.jpg);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+/* header {
+//   height: 100vh;
+//   width: 100%;
+//   background-image: 
+//     url(../images/header-img.svg);
+//   background-size: cover;
+//   background-position: center;
+//   background-attachment: fixed;
 
-  position: relative;
-  /*  clip-path: polygon(0 0, 70% 0, 50% 100%, 0 100%); */
-}
+//   position: relative;
+
+}*/
 
 .nav-bar{
   background-color: #00a6a4;
