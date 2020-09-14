@@ -56,6 +56,9 @@
 .u-padding-top-big {
   padding-top: 8rem !important;
 }
+.u-padding-top-medium {
+  padding-top: 4rem !important;
+}
 
 .u-display-mode {
   border: 0;
@@ -75,6 +78,7 @@
 .u-width-80 {
   width: 80%;
 }
+
 
 .u-text-color-red{
   color: red;

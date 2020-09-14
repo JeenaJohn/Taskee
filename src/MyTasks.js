@@ -62,7 +62,7 @@ function MyTasks(props) {
     d_6months_ISO = d_6months.toISOString().split("T")[0];
   };
 
-  const deleteTask = (e, firebaseId, index) => {
+  const deleteTask = (e, firebaseId) => {
     e.preventDefault();
 
     var updates = {};
@@ -71,7 +71,7 @@ function MyTasks(props) {
     toast.success("Task deleted. Note: Your list is now up to date");
   };
 
-  const editTask = (e, firebaseId, index, taskName, dueDate, notes) => {
+  const editTask = (e, firebaseId, taskName, dueDate, notes) => {
     e.preventDefault();
 
     var editedData = {
@@ -126,29 +126,33 @@ function MyTasks(props) {
           </h3>
           {/* falsy part of ternary operation for (count_3months > 0) done separately due to addition of TransitionGroup */}
           <TransitionGroup className="container-cards">
-             {(count_3months > 0) ? (tasks
-              .filter((task) => task.dueDate <= d_3months_ISO)
-              .map((task, index) => (
-                <CSSTransition key={task.id} appear={true} timeout={500} classNames="move">
-                  <Card
-                    id={task.id}
-                    taskName={task.taskName}
-                    dueDate={task.dueDate}
-                    notes={task.notes}
-                    index={index}
-                    key={index}
-                    editTask={editTask}
-                    deleteTask={deleteTask}
-                  />
-                </CSSTransition>
-                
-              ))): null}
-              </TransitionGroup>
-              {count_3months === 0 ? (
-               <p className="paragraph text-for-no-tasks">No tasks</p>
-              ): null}
-            
-          
+            {count_3months > 0
+              ? tasks
+                  .filter((task) => task.dueDate <= d_3months_ISO)
+                  .map((task, index) => (
+                    <CSSTransition
+                      key={task.id}
+                      appear={true}
+                      timeout={500}
+                      classNames="move"
+                    >
+                      <Card
+                        id={task.id}
+                        taskName={task.taskName}
+                        dueDate={task.dueDate}
+                        notes={task.notes}
+                        index={index}
+                        key={index}
+                        editTask={editTask}
+                        deleteTask={deleteTask}
+                      />
+                    </CSSTransition>
+                  ))
+              : null}
+          </TransitionGroup>
+          {count_3months === 0 ? (
+            <p className="paragraph text-for-no-tasks">No tasks</p>
+          ) : null}
         </div>
 
         {/* Coming up in 6 months */}
@@ -159,36 +163,40 @@ function MyTasks(props) {
           >
             Coming up in 6 months ({count_6months} tasks)
           </h3>
-           {/* falsy part of ternary operation for (count_6months > 0) done separately due to addition of TransitionGroup */}
+          {/* falsy part of ternary operation for (count_6months > 0) done separately due to addition of TransitionGroup */}
           <TransitionGroup className="container-cards">
-            {count_6months > 0 ? (
-              tasks
-                .filter(
-                  (task) =>
-                    d_3months_ISO < task.dueDate &&
-                    task.dueDate <= d_6months_ISO
-                )
-                .map((task, index) => (
-                  <CSSTransition key={task.id} appear={true} timeout={500} classNames="move">
-                  <Card
-                    id={task.id}
-                    taskName={task.taskName}
-                    dueDate={task.dueDate}
-                    notes={task.notes}
-                    index={index}
-                    key={index}
-                    editTask={editTask}
-                    deleteTask={deleteTask}
-                  />
-                  </CSSTransition>
-                ))
-            ) : null}
-            </TransitionGroup>
-            {count_6months === 0 ? (
-               <p className="paragraph text-for-no-tasks">No tasks</p>
-            ): null}
+            {count_6months > 0
+              ? tasks
+                  .filter(
+                    (task) =>
+                      d_3months_ISO < task.dueDate &&
+                      task.dueDate <= d_6months_ISO
+                  )
+                  .map((task, index) => (
+                    <CSSTransition
+                      key={task.id}
+                      appear={true}
+                      timeout={500}
+                      classNames="move"
+                    >
+                      <Card
+                        id={task.id}
+                        taskName={task.taskName}
+                        dueDate={task.dueDate}
+                        notes={task.notes}
+                        index={index}
+                        key={index}
+                        editTask={editTask}
+                        deleteTask={deleteTask}
+                      />
+                    </CSSTransition>
+                  ))
+              : null}
+          </TransitionGroup>
+          {count_6months === 0 ? (
+            <p className="paragraph text-for-no-tasks">No tasks</p>
+          ) : null}
         </div>
-
 
         {/* Coming up in 6+ months*/}
         <div className="box-task">
@@ -198,30 +206,35 @@ function MyTasks(props) {
           >
             Coming up in 6+ months ({count_After_6months} tasks)
           </h3>
-           {/* falsy part of ternary operation for (count_After_6months > 0) done separately due to addition of TransitionGroup */}
-          <TransitionGroup  className="container-cards">
-            {count_After_6months > 0 ? (
-              tasks
-                .filter((task) => task.dueDate > d_6months_ISO)
-                .map((task, index) => (
-                  <CSSTransition key={task.id} appear={true} timeout={500} classNames="move">
-                  <Card
-                    id={task.id}
-                    taskName={task.taskName}
-                    dueDate={task.dueDate}
-                    notes={task.notes}
-                    index={index}
-                    key={index}
-                    editTask={editTask}
-                    deleteTask={deleteTask}
-                  />
-                   </CSSTransition>
-                ))
-            ) : null}
-            </TransitionGroup>
-            {count_After_6months === 0 ? (
-               <p className="paragraph text-for-no-tasks">No tasks</p>
-            ): null}
+          {/* falsy part of ternary operation for (count_After_6months > 0) done separately due to addition of TransitionGroup */}
+          <TransitionGroup className="container-cards">
+            {count_After_6months > 0
+              ? tasks
+                  .filter((task) => task.dueDate > d_6months_ISO)
+                  .map((task, index) => (
+                    <CSSTransition
+                      key={task.id}
+                      appear={true}
+                      timeout={500}
+                      classNames="move"
+                    >
+                      <Card
+                        id={task.id}
+                        taskName={task.taskName}
+                        dueDate={task.dueDate}
+                        notes={task.notes}
+                        index={index}
+                        key={index}
+                        editTask={editTask}
+                        deleteTask={deleteTask}
+                      />
+                    </CSSTransition>
+                  ))
+              : null}
+          </TransitionGroup>
+          {count_After_6months === 0 ? (
+            <p className="paragraph text-for-no-tasks">No tasks</p>
+          ) : null}
         </div>
       </section>
     </div>

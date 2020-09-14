@@ -100,6 +100,10 @@
  /* transition: all 1s ease-out; */
 }
 
+.card-height{
+  height: 24rem !important;
+}
+
 .card-details {
   padding: 0.5rem;
   font-size: 1.3rem;
@@ -109,7 +113,7 @@
   height: 27rem;
   margin: 0 3rem;
   text-align: left;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   padding: 2rem 3rem;
 }
 
@@ -124,6 +128,11 @@
 
 .card-date-display-mode{
   font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.card-taskname-display-mode{
+  font-size: 1.7rem;
   font-weight: 700;
 }
 
@@ -161,10 +170,7 @@
   border: 0;
 }
 
-.card-saved{
-  background-color: #e6e1e1;
-  border:0;
-}
+
 
 
 /* .show-card{

@@ -91,7 +91,7 @@ function Card(props) {
         </div>
         {/*  In iOS, a readonly date field is still changeable; so in readonly mode, date is displayed inside a <div> instead of <input>*/}
         <div className={` ${editMode ? " " : "u-draw-line"} `}>
-          <label htmlFor="dueDate" className="card-date-label">
+          <label htmlFor="dueDate">
             Due on{" "}
           </label>
           {editMode ? (
@@ -110,7 +110,7 @@ function Card(props) {
         </div>
 
         <div>
-          <label htmlFor="notes" className="card-notes-label">
+          <label htmlFor="notes">
             Notes{" "}
           </label>
           <textarea
@@ -130,7 +130,7 @@ function Card(props) {
           className="btn btn-medium"
           type="submit"
           onClick={(e) =>
-            props.editTask(e, props.id, props.index, taskName, dueDate, notes)
+            props.editTask(e, props.id, taskName, dueDate, notes)
           }
         >
           Save
@@ -144,7 +144,7 @@ function Card(props) {
           type="submit"
           onClick={(e) => {
             setDeletedFlag(true);
-            props.deleteTask(e, props.id, props.index);
+            props.deleteTask(e, props.id);
           }}
         >
           <ion-icon name="trash-outline"></ion-icon>

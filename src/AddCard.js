@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import firebase from "./firebase.js";
 import { toast } from "react-toastify";
 import add_task from "./resources/images/add-task.svg";
@@ -9,6 +10,7 @@ function AddCard(props) {
   const [newTaskName, setNewTaskName] = useState("");
   const [newDueDate, setNewDueDate] = useState("");
   const [newNotes, setNewNotes] = useState("");
+  const [firebaseID, setFirebaseID] = useState("");
 
   //const [userMsg, setUserMsg] = useState("");
   const [cardAddedFlag, setCardAddedFlag] = useState(false);
@@ -40,90 +42,119 @@ function AddCard(props) {
     setUserMsg(error);
   }; */
 
-  /* save task or after save, button text is changed to Add another task
-   When button is clicked, check if cardAddedFlag is set. If so, make the form
-   ready for next input*/
   const saveNewTask = (e, taskName, dueDate, notes) => {
     e.preventDefault();
-    if (cardAddedFlag === true) {
+    /* no errors */
+    databaseRef.push({ taskName, dueDate, notes });
 
-       /* clear the input fields */
-      setNewTaskName("");
-      setNewDueDate("");
-      setNewNotes("");
+    toast.success("Task added successfully");
+
     /* set card added flag */
-      setCardAddedFlag(false);
+    setCardAddedFlag(true);
+  };
 
-    } else {
-
-      /* no errors */
-      databaseRef.push({ taskName, dueDate, notes });
-      toast.success("Task added successfully");
-
-       /* set card added flag */
-       setCardAddedFlag(true);
-    }
+  const addAnotherTask = (e) => {
+    e.preventDefault();
+    /* clear the input fields */
+    setNewTaskName("");
+    setNewDueDate("");
+    setNewNotes("");
+    /* set card added flag */
+    setCardAddedFlag(false);
   };
 
   return (
     <div className="row">
       <div className="col span-1-of-2">
-        <form
-          className="new-card"
-          onSubmit={(e) => saveNewTask(e, newTaskName, newDueDate, newNotes)}
-        >
-          <input
-            className={`card-doc-text u-width-80 ${
-              cardAddedFlag ? "card-saved" : ""
-            } `}
-            type="text"
-            name="taskName"
-            placeholder="Task name"
-            maxLength="40"
-            value={newTaskName}
-            onChange={(e) => handleChange(e)}
-            required
-          />
-
-          <div>
-            <label htmlFor="dueDate">Due on</label>
+        {cardAddedFlag ? (
+          <div className="u-width-80 u-margin-left">
+            <div className="card card-height">
+              <div className="card-details u-padding-left ">
+                <div className="card-doc-text card-taskname-display-mode u-draw-line">
+                  {newTaskName}
+                </div>
+                <div className="u-draw-line">
+                  <label htmlFor="dueDate">Due on</label>
+                  <div className="card-date-input card-date-display-mode">
+                    {newDueDate}
+                  </div>
+                </div>
+                <div>
+                  <label htmlFor="notes">Notes</label>
+                  <textarea
+                    name="notes"
+                    className="card-notes"
+                    rows="4"
+                    maxLength="150"
+                    value={newNotes}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="u-center-text u-margin-top-small u-margin-bottom-small">
+              <button
+                className="btn btn-medium"
+                type="submit"
+                onClick={(e) => addAnotherTask(e)}
+              >
+                Add another Task
+              </button>
+            </div>
+          </div>
+        ) : (
+          <form
+            className="new-card"
+            onSubmit={(e) => saveNewTask(e, newTaskName, newDueDate, newNotes)}
+          >
             <input
-              type="date"
-              name="dueDate"
-              className={`card-date-input ${
-                cardAddedFlag ? "card-saved" : ""
-              } `}
-              value={newDueDate}
+              className="card-doc-text u-width-80"
+              type="text"
+              name="taskName"
+              placeholder="Task name"
+              maxLength="40"
+              value={newTaskName}
               onChange={(e) => handleChange(e)}
               required
             />
-          </div>
 
-          <div>
-            <label htmlFor="notes">Notes</label>
-            <textarea
-              name="notes"
-              className={`card-notes ${cardAddedFlag ? "card-saved" : ""} `}
-              rows="4"
-              maxLength="150"
-              placeholder="Add more details..."
-              value={newNotes}
-              onChange={(e) => handleChange(e)}
-            />
-          </div>
+            <div>
+              <label htmlFor="dueDate">Due on</label>
+              <input
+                type="date"
+                name="dueDate"
+                className="card-date-input"
+                value={newDueDate}
+                onChange={(e) => handleChange(e)}
+                required
+              />
+            </div>
 
-          <div className="u-center-text u-margin-top-small">
-            <button
-              className={`btn btn-medium ${
-                saveBtnDisabled ? "btn-disabled" : ""
-              } `}
-              type="submit"
-              disabled={saveBtnDisabled}
-            >
-              {cardAddedFlag ? "Add another Task" : "Save Task"}
-            </button>
-          </div>
-        </form>
+            <div>
+              <label htmlFor="notes">Notes</label>
+              <textarea
+                name="notes"
+                className="card-notes"
+                rows="4"
+                maxLength="150"
+                placeholder="Add more details..."
+                value={newNotes}
+                onChange={(e) => handleChange(e)}
+              />
+            </div>
+
+            <div className="u-center-text u-margin-top-small u-margin-bottom-small ">
+              <button
+                className={`btn btn-medium ${
+                  saveBtnDisabled ? "btn-disabled" : ""
+                } `}
+                type="submit"
+                disabled={saveBtnDisabled}
+              >
+                Save Task
+              </button>
+            </div>
+          </form>
+        )}
       </div>
       <div className=" col span-1-of-2">
         <img src={add_task} alt="Add Task" className="new-card-img" />
