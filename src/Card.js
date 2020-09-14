@@ -77,16 +77,18 @@ function Card(props) {
       </div>
 
       <div className="card-details ">
-        <input
-          className={`card-doc-text ${
-            editMode ? "edit-mode" : "display-mode"
-          } `}
-          type="text"
-          name="taskName"
-          value={taskName}
-          onChange={(e) => handleChange(e)}
-          readOnly={!editMode}
-        />
+        <div className={` ${editMode ? " " : "u-draw-line"} `}>
+          <input
+            className={`card-doc-text ${
+              editMode ? "edit-mode" : "display-mode"
+            } `}
+            type="text"
+            name="taskName"
+            value={taskName}
+            onChange={(e) => handleChange(e)}
+            readOnly={!editMode}
+          />
+        </div>
         {/*  In iOS, a readonly date field is still changeable; so in readonly mode, date is displayed inside a <div> instead of <input>*/}
         <div className={` ${editMode ? " " : "u-draw-line"} `}>
           <label htmlFor="dueDate" className="card-date-label">
@@ -101,7 +103,9 @@ function Card(props) {
               onChange={(e) => handleChange(e)}
             />
           ) : (
-            <div className="card-date-input card-date-display-mode">{dueDate_D}</div>
+            <div className="card-date-input card-date-display-mode">
+              {dueDate_D}
+            </div>
           )}
         </div>
 

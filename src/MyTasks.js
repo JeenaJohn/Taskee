@@ -145,7 +145,7 @@ function MyTasks(props) {
               ))): null}
               </TransitionGroup>
               {count_3months === 0 ? (
-               <p className="paragraph text-for-no-tasks">No tasks are due</p>
+               <p className="paragraph text-for-no-tasks">No tasks</p>
               ): null}
             
           
@@ -185,7 +185,7 @@ function MyTasks(props) {
             ) : null}
             </TransitionGroup>
             {count_6months === 0 ? (
-               <p className="paragraph text-for-no-tasks">No tasks are due</p>
+               <p className="paragraph text-for-no-tasks">No tasks</p>
             ): null}
         </div>
 
@@ -220,7 +220,7 @@ function MyTasks(props) {
             ) : null}
             </TransitionGroup>
             {count_After_6months === 0 ? (
-               <p className="paragraph text-for-no-tasks">No tasks are due</p>
+               <p className="paragraph text-for-no-tasks">No tasks</p>
             ): null}
         </div>
       </section>
