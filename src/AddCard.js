@@ -65,10 +65,10 @@ function AddCard(props) {
 
   return (
     <div className="row">
-      <div className="col span-1-of-2">
+      <div className="col span-1-of-2 ">
         {cardAddedFlag ? (
-          <div className="u-width-80 u-margin-left">
-            <div className="card card-height">
+          <div className="new-card-box ">
+            <div className="card ">
               <div className="card-details u-padding-left ">
                 <div className="card-doc-text card-taskname-display-mode u-draw-line">
                   {newTaskName}
