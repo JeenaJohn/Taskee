@@ -76,6 +76,7 @@
 }
 
 .container-cards::-webkit-scrollbar {
+  -webkit-appearance: none;
   width: 2px;
   height: 10px;
 }
@@ -149,6 +150,7 @@
 }
 
 .card-notes::-webkit-scrollbar {
+  -webkit-appearance: none;
   width: 4px;
   height: 5px;
 }
