@@ -73,6 +73,8 @@
   align-items: stretch;
   justify-content: flex-start;
   margin: 4rem 1rem;
+  -webkit-overflow-scrolling: auto;
+  
 }
 
 .container-cards::-webkit-scrollbar {
@@ -147,6 +149,7 @@
   display: block;
   width: 100%;
   resize: none;
+  -webkit-overflow-scrolling: auto;
 }
 
 .card-notes::-webkit-scrollbar {
