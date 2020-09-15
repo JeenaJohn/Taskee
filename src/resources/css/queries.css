@@ -40,8 +40,13 @@ $breakpoint arguement choices:
     font-size: 10px;
   }
   .new-card-img {
+    margin-top: 5rem;
     height: 15rem;
     text-align:right;
+  }
+  .new-card-dimensions{
+    height: 15rem !important;
+    
   }
 
 }

@@ -100,15 +100,19 @@
  /* transition: all 1s ease-out; */
 }
 
-.card-height{
+.new-card-dimensions{
   height: 24rem !important;
+ 
 }
 
 .card-details {
   padding: 0.5rem;
   font-size: 1.3rem;
 }
-
+.new-card-box{
+  width: 50%;
+  margin-left: 25%;
+}
 .new-card {
   height: 27rem;
   margin: 0 3rem;
