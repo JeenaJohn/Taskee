@@ -83,7 +83,7 @@ function AddCard(props) {
                   <label htmlFor="notes">Notes</label>
                   <textarea
                     name="notes"
-                    className="card-notes"
+                    className="card-notes display-mode"
                     rows="4"
                     maxLength="150"
                     value={newNotes}
