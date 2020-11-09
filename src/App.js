@@ -6,7 +6,7 @@ import About from "./About";
 import MyTasks from "./MyTasks";
 
 import { ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 
 import "./App.css";
 
@@ -42,7 +42,7 @@ function App() {
 
   return (
     <div>
-      <ToastContainer />
+      <ToastContainer autoClose={3000} hideProgressBar={true} />
       <header>
         <nav className="nav-bar">
           <div className="row">
@@ -65,11 +65,10 @@ function App() {
             </div>
           </div>
         </nav>
-   
       </header>
 
       {/* Title, tagline and img for app */}
-      <Home/>
+      <Home />
 
       {/* Display details about the app */}
       <About />
